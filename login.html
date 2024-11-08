@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - GAMESExpress</title>
-    <link rel="stylesheet" href="./styles/login-styles.css">
+    <link rel="stylesheet" href="./styles/login.css">
 </head>
 
 <body>
@@ -17,14 +17,23 @@
             <img src="./Imagens/slogan.png" alt="slogan" class="slogan">
         </div>
         <div class="user">
-            <img src="./Imagens/Male User.png" alt="Usuário">
-            <img src="./Imagens/Shopping Cart.png" alt="Carrinho">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-cart3"
+                viewBox="0 0 16 16">
+                <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+            </svg>
         </div>
     </header>
 
     <main class="login-container">
         <h2>LOGIN</h2>
-        <form class="login-form">
+        <form class="login-form" onsubmit="validarFormulario(event)">
             <div class="input-container">
                 <label for="email" class="input-label">Email:</label>
                 <input type="email" id="email" name="email" required class="newsletter-input"
@@ -36,15 +45,19 @@
                     placeholder="Exemplo142#">
             </div>
             <button type="submit" class="register-button">Entrar</button>
-            <p> Esqueceu sua Senha? <a href="#">Esqueci minha senha</a></p>
+            <p> Esqueceu sua Senha? <a href="#" onclick="showPasswordReset()">Esqueci minha senha</a></p>
             <p>Ainda não tem uma conta? <a href="./register.html">Cadastrar-se</a></p>
         </form>
+        <div id="feedback" style="margin-top: 15px; font-size: 14px;"></div>
     </main>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 GAMESExpress. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="./js/login.js"></script>
 </body>
 
 </html>
